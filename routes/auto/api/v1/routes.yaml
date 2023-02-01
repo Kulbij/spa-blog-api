@@ -1,0 +1,10 @@
+group:
+  domain: $api.domain$
+  prefix: "/api/$api.version$"
+  namespace: App\Http\Controllers\Api
+  paths:
+    "$routes.index.url$":
+      get:
+        uses: RouteController@$routes.index.method$
+        as: "api.$api.version$.routes.index"
+

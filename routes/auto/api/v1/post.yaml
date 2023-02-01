@@ -1,0 +1,36 @@
+group:
+  domain: $api.domain$
+  prefix: "/api/$api.version$"
+  namespace: App\Http\Controllers\Api
+  paths:
+    "$post.index.url$":
+      get:
+        uses: BlogController@$post.index.method$
+        as: "api.$api.version$.post.index"
+        middleware:
+          - "auth:api"
+    "$post.show.url$":
+      get:
+        uses: BlogController@$post.show.method$
+        as: "api.$api.version$.post.show"
+        # middleware:
+        #   - "can:view,App\\Models\\User,postId"
+    "$post.create.url$":
+      post:
+        uses: BlogController@$post.create.method$
+        as: "api.$api.version$.post.create"
+        middleware:
+          - "auth:api"
+    "$post.update.url$":
+      post:
+        uses: BlogController@$post.update.method$
+        as: "api.$api.version$.post.update"
+        middleware:
+          - "auth:api"
+    "$post.delete.url$":
+      delete:
+        uses: BlogController@$post.delete.method$
+        as: "api.$api.version$.post.delete"
+        middleware:
+          # - "can:delete,App\\Models\\User,postId"
+          - "auth:api"

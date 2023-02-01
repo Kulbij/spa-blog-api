@@ -1,0 +1,23 @@
+group:
+  domain: $api.domain$
+  prefix: "/api/$api.version$"
+  namespace: App\Http\Controllers\Api
+  paths:
+    "$auth.login.url$":
+      post:
+        uses: AuthController@$auth.login.method$
+        as: "api.$api.version$.auth.login"
+
+    "$auth.logout.url$":
+      post:
+        uses: AuthController@$auth.logout.method$
+        as: "api.$api.version$.auth.logout"
+        middleware:
+          - "auth:api"
+
+    "$auth.token_refresh.url$":
+      post:
+        uses: AuthController@$auth.token_refresh.method$
+        as: "api.$api.version$.auth.token.refresh"
+        middleware:
+          - "auth:api"

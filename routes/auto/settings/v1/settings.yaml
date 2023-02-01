@@ -1,0 +1,314 @@
+default:
+  auth:
+    methods:
+      login:
+        url: "/auth/login"
+        method: "login"
+        auth: false
+      logout:
+        url: "/auth/logout"
+        method: "logout"
+        auth: true
+      token_refresh:
+        url: "/auth/token/refresh"
+        method: "refresh"
+        auth: true
+
+  # translate:
+  #   methods:
+  #     page:
+  #       url: "/translate/{page}"
+  #       method: "translate"
+
+  password:
+    methods:
+      forgot:
+        url: "/password/forgot"
+        method: "forgot"
+        auth: false
+      restore:
+        url: "/password/restore"
+        method: "restore"
+        auth: false
+      set:
+        url: "/password/set"
+        method: "set"
+        auth: false
+      change:
+        url: "/password/change"
+        method: "change"
+        auth: true
+      send:
+        url: "/companies/{companyId}/employees/{employee}/password"
+        method: "sendCreatePasswordLink"
+
+  users:
+    methods:
+      # show:
+      #   url: "/users/{id}"
+      #   method: "show"
+      #   auth: true
+      # update:
+      #   url: "/users/{id}"
+      #   method: "update"
+      #   auth: true
+      register:
+        url: "/users/register"
+        method: "register"
+        auth: false
+      me:
+        url: "/me"
+        method: "userProfile"
+        auth: true
+
+  account:
+    methods:
+      update:
+        url: "/account/update"
+        method: "update"
+        auth: true
+
+  post:
+    methods:
+      index:
+        url: "/posts"
+        method: "index"
+        auth: true
+      show:
+        url: "/post/show/{postId}"
+        method: "show"
+        auth: true
+      create:
+        url: "/post/create"
+        method: "create"
+        auth: true
+      update:
+        url: "/post/update/{postId}"
+        method: "update"
+        auth: true
+      delete:
+        url: "/post/delete/{postId}"
+        method: "delete"
+        auth: true
+
+  category:
+    methods:
+      index:
+        url: "/categories"
+        method: "index"
+        auth: true
+      show:
+        url: "/category/show/{categoryId}"
+        method: "show"
+        auth: true
+      create:
+        url: "/category/create"
+        method: "create"
+        auth: true
+      update:
+        url: "/category/update/{categoryId}"
+        method: "update"
+        auth: true
+      delete:
+        url: "/category/delete/{categoryId}"
+        method: "delete"
+        auth: true
+
+  # employees:
+  #   methods:
+  #     me:
+  #       url: "/me"
+  #       method: "userProfile"
+  #       auth: true
+      # index:
+      #   url: "/companies/{companyId}/employees"
+      #   method: "index"
+      #   auth: true
+      # store:
+      #   url: "/companies/{companyId}/employees"
+      #   method: "store"
+      #   auth: true
+
+      # show:
+      #   url: "/companies/{companyId}/employees/{employee}"
+      #   method: "show"
+      #   auth: true
+      # update:
+      #   url: "/companies/{companyId}/employees/{employee}"
+      #   method: "update"
+      #   auth: true
+      # destroy:
+      #   url: "/companies/{companyId}/employees/{employee}"
+      #   method: "destroy"
+      #   auth: true
+
+      # restore:
+      #   url: "/companies/{companyId}/employees/{employee}/restore"
+      #   method: "restore"
+      #   auth: true
+
+  # limits:
+  #   methods:
+  #     index:
+  #       url: "/companies/{companyId}/limits"
+  #       method: "index"
+  #       auth: true
+  #     store:
+  #       url: "/companies/{companyId}/limits"
+  #       method: "store"
+  #       auth: true
+  #     destroy:
+  #       url: "/companies/{companyId}/limits/{limit}"
+  #       method: "destroy"
+  #       auth: true
+  #     update:
+  #       url: "/companies/{companyId}/limits/{limit}"
+  #       method: "update"
+  #       auth: true
+  #     show:
+  #       url: "/companies/{companyId}/limits/{limit}"
+  #       method: "show"
+  #       auth: true
+
+  # homepage:
+  #   methods:
+  #     mainList:
+  #       url: "/dishes/main"
+  #       method: "mainList"
+
+  # dishes:
+  #   methods:
+  #     categories:
+  #       index:
+  #         url: "/companies/{companyId}/dishes/categories"
+  #         method: "getCategories"
+  #         auth: true
+  #       show:
+  #         url: "/companies/{companyId}/dishes/categories/{category}"
+  #         method: "getCategory"
+  #         auth: true
+
+  #     index:
+  #       url: "/companies/{companyId}/{employee}/dishes"
+  #       method: "index"
+  #       auth: true
+  #     recommended:
+  #       url: "/companies/{companyId}/{employee}/dishes/recommended"
+  #       method: "recommended"
+  #       auth: true
+  #     show:
+  #       url: "/companies/{companyId}/{employee}/dishes/{dish}"
+  #       method: "show"
+  #       auth: true
+
+  # roles:
+  #   methods:
+  #     index:
+  #       url: "/roles"
+  #       method: "index"
+  #       auth: true
+  #     show:
+  #       url: "/roles/{role}"
+  #       method: "show"
+  #       auth: true
+
+  # preferences:
+  #   methods:
+  #     index:
+  #       url: "/preferences"
+  #       method: "index"
+  #       auth: true
+  #     show:
+  #       url: "/preferences/{preference}"
+  #       method: "show"
+  #       auth: true
+
+  # reviews:
+  #   methods:
+  #     store:
+  #       url: "/reviews"
+  #       method: "store"
+  #       auth: true
+
+  routes:
+    methods:
+      index:
+        url: "/routes"
+        method: "index"
+
+  # orders:
+  #   methods:
+  #     completed:
+  #       url: "companies/{companyId}/orders/completed"
+  #       method: "completedOrders"
+  #       auth: true
+  #     completedByUser:
+  #       url: "companies/{companyId}/orders/{employee}/completed"
+  #       method: "completedOrders"
+  #       auth: true
+  #     completedPeriods:
+  #       url: "companies/{companyId}/orders/completed/periods"
+  #       method: "completedOrdersPeriods"
+  #       auth: true
+  #     destroy:
+  #       url: "/companies/{companyId}/orders/{employee}/{order}"
+  #       method: "destroy"
+  #       auth: true
+  #     create:
+  #       url: "/companies/{companyId}/orders/{employee}"
+  #       method: "create"
+  #       auth: true
+  #     list:
+  #       url: "/companies/{companyId}/orders/{employee}"
+  #       method: "list"
+  #       auth: true
+  #     remove:
+  #       url: "/companies/{companyId}/orders/{employee}"
+  #       method: "remove"
+  #       auth: true
+  #     exportPeriods:
+  #       url: "companies/{companyId}/orders/export/periods"
+  #       method: "completedOrdersExportPeriods"
+  #       auth: true
+  #     export:
+  #       url: "/companies/{companyId}/orders/export"
+  #       method: "export"
+  #       auth: true
+  #     export-status:
+  #       url: "/companies/{companyId}/orders/export/{id}/status"
+  #       method: "checkExportFileStatus"
+  #       auth: true
+  #     export-download:
+  #       url: "/companies/{companyId}/orders/export/{id}"
+  #       method: "downloadExportFile"
+  #       auth: true
+
+  # seo:
+  #   methods:
+  #     meta:
+  #       url: "seo/meta/{page?}"
+  #       method: "meta"
+  #     scripts:
+  #       url: "seo/scripts/{page?}"
+  #       method: "scripts"
+
+  # invoices:
+  #   methods:
+  #     payOverLimit:
+  #       url: "/invoices/create"
+  #       method: "payOverLimit"
+  #     checkPayment:
+  #       url: "/invoices/check"
+  #       method: "checkPayment"
+
+  # payment:
+  #   methods:
+  #     cardList:
+  #       url: "/payment/card/list"
+  #       method: "cardList"
+  #     cardAdd:
+  #       url: "/payment/card/add"
+  #       method: "cardAdd"
+  #     cardRemove:
+  #       url: "/payment/card/remove"
+  #       method: "cardRemove"

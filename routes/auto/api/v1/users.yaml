@@ -1,0 +1,28 @@
+group:
+  domain: $api.domain$
+  prefix: "/api/$api.version$"
+  namespace: App\Http\Controllers\Api
+  paths:
+    # "$users.show.url$":
+    #   get:
+    #     uses: UserController@$users.show.method$
+    #     as: "api.$api.version$.users.show"
+    #     middleware:
+    #       - "can:view,App\\Models\\User,id"
+    #       - "auth:api"
+
+    # "$users.update.url$":
+    #   put:
+    #     uses: UserController@$users.update.method$
+    #     as: "api.$api.version$.users.update"
+    #     middleware:
+    #       - "can:update,App\\Models\\User,id"
+    #       - "auth:api"
+    "$users.me.url$":
+      get:
+        uses: UserController@$users.me.method$
+        as: "api.$api.version$.me"
+    "$users.register.url$":
+      post:
+        uses: UserController@$users.register.method$
+        as: "api.$api.version$.users.register"

@@ -1,0 +1,36 @@
+group:
+  domain: $api.domain$
+  prefix: "/api/$api.version$"
+  namespace: App\Http\Controllers\Api
+  paths:
+    "$category.index.url$":
+      get:
+        uses: CategoryController@$category.index.method$
+        as: "api.$api.version$.category.index"
+        middleware:
+          - "auth:api"
+    "$category.show.url$":
+      get:
+        uses: CategoryController@$category.show.method$
+        as: "api.$api.version$.category.show"
+        # middleware:
+        #   - "can:view,App\\Models\\User,postId"
+    "$category.create.url$":
+      post:
+        uses: CategoryController@$category.create.method$
+        as: "api.$api.version$.category.create"
+        middleware:
+          - "auth:api"
+    "$category.update.url$":
+      post:
+        uses: CategoryController@$category.update.method$
+        as: "api.$api.version$.category.update"
+        middleware:
+          - "auth:api"
+    "$category.delete.url$":
+      delete:
+        uses: CategoryController@$category.delete.method$
+        as: "api.$api.version$.category.delete"
+        middleware:
+          # - "can:delete,App\\Models\\User,postId"
+          - "auth:api"

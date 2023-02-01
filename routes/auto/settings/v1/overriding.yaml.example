@@ -1,0 +1,17 @@
+overriding:
+  global:
+    auth:
+      middleware:
+        - "throttle:5,1"
+      methods:
+         login:
+           url: "/auth/login12"
+           method: "login"
+  '532a0b61-4593-4a14-9cd1-d5bd258eaec2':
+    auth:
+      middleware:
+        - "throttle:5,2"
+      methods:
+        logout:
+          url: "/auth/logout7"
+          method: "logout"

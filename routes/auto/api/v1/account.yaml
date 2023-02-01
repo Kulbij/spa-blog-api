@@ -1,0 +1,11 @@
+group:
+  domain: $api.domain$
+  prefix: "/api/$api.version$"
+  namespace: App\Http\Controllers\Api
+  paths:
+    "$account.update.url$":
+      post:
+        uses: UserController@$account.update.method$
+        as: "api.$api.version$.account.update"
+        middleware:
+          - "auth:api"
